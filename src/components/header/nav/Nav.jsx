@@ -9,7 +9,7 @@ export default function Nav() {
   const [menu, openMenu] = useState(false);
   return (
     <div className="mx-auto">
-      <div className=" overflow-hidden py-4 px-6  bg-gradient-to-b from-black  text-lg flex justify-between items-center uppercase fixed w-full z-20">
+      <div className="overflow-hidden py-4 px-6  bg-gradient-to-b from-black  text-lg flex justify-between items-center uppercase fixed w-full z-20">
         <div className="flex gap-8 items-center">
           <LogoNav/>
           <MenuNav/>
