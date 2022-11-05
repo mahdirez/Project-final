@@ -47,7 +47,7 @@ export default function ImgSlider() {
             id,
           }) => {
             return (
-              <SwiperSlide key={id}>
+              <SwiperSlide key={id} className="imgSliders">
                 <img src={`${baseUrlImage}/w1280/${backdrop_path}`} />
                 <div className="gap-8 w-2/4 leading-7 z-50 absolute top-9 left-8 lg:top-40 left-8 ">
                   <h1 className="text-3xl uppercase font-bold">{title}</h1>

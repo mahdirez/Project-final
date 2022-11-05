@@ -47,6 +47,12 @@ body {
   align-items: center;
 } */
 
+.swiper-slide{
+  cursor: pointer;
+}
+.imgSliders{
+  cursor: default;
+}
 .swiper-slide img {
   display: block;
   width: 100%;

@@ -50,9 +50,9 @@ export default function FreeToWatch() {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {card.map(({ title, poster_path, vote_average }) => {
+        {card.map(({ title, poster_path, vote_average ,id }) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={id}>
               <MovieCard
                 title={title}
                 img={poster_path}

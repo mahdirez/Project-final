@@ -8,12 +8,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css/navigation";
 
-export default function NowPlayingCard() {
+export default function TrendingCard() {
   const [card, setCard] = useState([]);
 
   async function nowPlayingCard() {
     const { data } = await axios.get(
-      `${baseUrl}/movie/now_playing?api_key=${apiKey}`
+      `${baseUrl}/trending/all/week?api_key=${apiKey}`
     );
     setCard(data.results);
     console.log(card);
@@ -24,7 +24,7 @@ export default function NowPlayingCard() {
 
   return (
     <div className="py-4 px-6">
-      <h1 className="text-2xl my-2">Now Playing</h1>
+      <h1 className="text-2xl my-2">Trending this week</h1>
       <Swiper
         rewind={true}
         navigation={true}

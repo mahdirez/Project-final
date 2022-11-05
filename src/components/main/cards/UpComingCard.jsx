@@ -5,14 +5,13 @@ import { useEffect } from "react";
 import { apiKey, baseUrl, baseUrlImage } from "../../../api";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper";
-import MovieCard from "../styleCard/MovieCard";
 
-export default function TopRateCard() {
+
+export default function UpComingCard() {
   const [card, setCard] = useState([]);
   async function apiCard() {
     const { data } = await axios.get(
-      `${baseUrl}/movie/top_rated?api_key=${apiKey}`
+      `${baseUrl}/movie/upcoming?api_key=${apiKey}`
     );
     setCard(data.results);
   }
@@ -20,18 +19,16 @@ export default function TopRateCard() {
     apiCard();
   }, []);
   return (
-    <div>
+    <div className="bg-sky-500 h-fit">
       <div className="py-4 px-6">
-        <h1 className="text-2xl my-2">Top Rating</h1>
+        <h1 className="text-2xl my-2">Up Coming</h1>
         <Swiper
           rewind={true}
-          navigation={true}
+         
           slidesPerView={1}
           spaceBetween={1}
           loop={true}
-          pagination={{
-            clickable: true,
-          }}
+        
           breakpoints={{
             "@0.00": {
               slidesPerView: 1,
@@ -46,21 +43,26 @@ export default function TopRateCard() {
               spaceBetween: 40,
             },
             "@1.50": {
-              slidesPerView: 6,
+              slidesPerView: 4,
               spaceBetween: 15,
             },
           }}
-          modules={[Navigation]}
+         
           className="mySwiper"
         >
-          {card.map(({ title, poster_path, vote_average,id }) => {
+          {card.map(({ title, backdrop_path, release_date, id }) => {
             return (
               <SwiperSlide key={id}>
-                <MovieCard 
-                  title={title}
-                  img={poster_path}
-                  rating={vote_average}
-                />
+                  <img
+                    src={`${baseUrlImage}/w1280/${backdrop_path}`}
+                    className="object-cover w-full h-full rounded mt-2"
+                    alt="test"
+                  />
+                
+                <div className="flex flex-col justify-center items-center mt-4  w-full h-full ">
+                    <h3>{title}</h3>
+                    <h3>{release_date}</h3>
+                </div>
               </SwiperSlide>
             );
           })}
@@ -69,7 +71,3 @@ export default function TopRateCard() {
     </div>
   );
 }
-
-// {card.map(({poster_path,vote_average,title})=>{
-
-// })}
