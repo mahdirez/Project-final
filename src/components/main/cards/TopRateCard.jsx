@@ -5,11 +5,12 @@ import { useEffect } from "react";
 import { apiKey, baseUrl, baseUrlImage } from "../../../api";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper";
+import { Navigation } from "swiper";
 import MovieCard from "../styleCard/MovieCard";
 
 export default function TopRateCard() {
   const [card, setCard] = useState([]);
+
   async function apiCard() {
     const { data } = await axios.get(
       `${baseUrl}/movie/top_rated?api_key=${apiKey}`
@@ -53,14 +54,10 @@ export default function TopRateCard() {
           modules={[Navigation]}
           className="mySwiper"
         >
-          {card.map(({ title, poster_path, vote_average,id }) => {
+          {card.map((movie) => {
             return (
-              <SwiperSlide key={id}>
-                <MovieCard 
-                  title={title}
-                  img={poster_path}
-                  rating={vote_average}
-                />
+              <SwiperSlide key={movie.id}>
+                <MovieCard movie={movie} />
               </SwiperSlide>
             );
           })}

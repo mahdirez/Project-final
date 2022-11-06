@@ -16,7 +16,6 @@ export default function TrendingCard() {
       `${baseUrl}/trending/all/week?api_key=${apiKey}`
     );
     setCard(data.results);
-    console.log(card);
   }
   useEffect(()=>{
     nowPlayingCard();
@@ -55,13 +54,11 @@ export default function TrendingCard() {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {card.map(({ title, poster_path, vote_average,id }) => {
+        {card.map((movie) => {
           return (
-            <SwiperSlide key={id}>
+            <SwiperSlide key={movie.id}>
               <MovieCard
-                title={title}
-                img={poster_path}
-                rating={vote_average}
+                movie={movie}
               />
             </SwiperSlide>
           );
@@ -70,3 +67,4 @@ export default function TrendingCard() {
     </div>
   );
 }
+// title, poster_path, vote_average,id 

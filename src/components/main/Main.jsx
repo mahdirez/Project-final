@@ -11,10 +11,10 @@ export default function Main() {
     <>
       <TopRateCard />
       <NowPlayingCard />
-      <UpComingCard/>
+      <UpComingCard />
       <FreeToWatch />
-      <PopularCard/>
-      <TrendingCard/>
+      <PopularCard />
+      <TrendingCard />
     </>
   );
 }

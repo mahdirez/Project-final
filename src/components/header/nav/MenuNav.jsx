@@ -1,10 +1,11 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function MenuNav() {
   return (
     <ul className="hidden lg:flex gap-4 items-center">
       <li>
-        <a href="/">Home</a>
+        <NavLink to="/free">Home</NavLink>
       </li>
       <li>
         <a href="/">Series</a>

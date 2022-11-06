@@ -1,18 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { baseUrlImage } from "../../../api";
 
-export default function MovieCard({ img, title, rating }) {
+export default function MovieCard({movie}) {
   return (
-    <>
+    <Link to={`/movies/${movie.id}`}>
       <div  className=" bg-gray-300 aspect-[1/2] relative rounded overflow-hidden ">
         <img
-          src={`${baseUrlImage}/w1280/${img}`}
+          src={`${baseUrlImage}/w1280/${movie.poster_path}`}
           className="object-cover w-full h-full"
           alt="test"
         />
 
         <div className="opacity-0 flex flex-col justify-end p-8 absolute bottom-0 left-0 w-full h-full hover:opacity-100 bg-gradient-to-b from-[#0f172a12] to-[#0f172a81] hover:from-[#0f172a2a] hover:to-[#0f172a9c]">
-          <h3>{title}</h3>
+          <h3>{movie.title}</h3>
 
           <div className="flex gap-2 mt-2">
             <span className="text-yellow-400">
@@ -28,10 +29,10 @@ export default function MovieCard({ img, title, rating }) {
               </svg>
             </span>
 
-            <span>{rating}/ 10</span>
+            <span>{movie.vote_average}/ 10</span>
           </div>
         </div>
       </div>
-    </>
+    </Link>
   );
 }

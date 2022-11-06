@@ -20,7 +20,7 @@ export default function Nav() {
           <SubscriptionNav/>
         </div>
       </div>
-      <ul className={`z-10 bg-slate-800 h-screen w-2/4 flex flex-col justify-center items-center absolute top-0 left-0 gap-12 ${menu ? "translate-0" : "translate-full"} transition-all duration-500 lg:hidden`} style={{translate : menu ? "0%" : "-100%"}}>
+      <ul className={`z-10 bg-slate-800 h-full w-2/4 flex flex-col justify-center items-center absolute top-0 left-0 gap-12 ${menu ? "translate-0" : "translate-full"} transition-all duration-500 lg:hidden`} style={{translate : menu ? "0%" : "-100%"}}>
         <li>
           <a href="/">Home</a>
         </li>

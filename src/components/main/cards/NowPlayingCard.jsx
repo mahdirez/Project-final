@@ -18,9 +18,9 @@ export default function NowPlayingCard() {
     setCard(data.results);
     console.log(card);
   }
-  useEffect(()=>{
+  useEffect(() => {
     nowPlayingCard();
-  },[])
+  }, []);
 
   return (
     <div className="py-4 px-6">
@@ -55,14 +55,10 @@ export default function NowPlayingCard() {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {card.map(({ title, poster_path, vote_average,id }) => {
+        {card.map((movie) => {
           return (
-            <SwiperSlide key={id}>
-              <MovieCard
-                title={title}
-                img={poster_path}
-                rating={vote_average}
-              />
+            <SwiperSlide key={movie.id}>
+              <MovieCard movie={movie} />
             </SwiperSlide>
           );
         })}

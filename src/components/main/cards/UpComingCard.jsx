@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { apiKey, baseUrl, baseUrlImage } from "../../../api";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
-
+import { Link } from "react-router-dom";
 
 export default function UpComingCard() {
   const [card, setCard] = useState([]);
@@ -24,11 +24,9 @@ export default function UpComingCard() {
         <h1 className="text-2xl my-2">Up Coming</h1>
         <Swiper
           rewind={true}
-         
           slidesPerView={1}
           spaceBetween={1}
           loop={true}
-        
           breakpoints={{
             "@0.00": {
               slidesPerView: 1,
@@ -47,22 +45,23 @@ export default function UpComingCard() {
               spaceBetween: 15,
             },
           }}
-         
           className="mySwiper"
         >
-          {card.map(({ title, backdrop_path, release_date, id }) => {
+          {card.map((movie) => {
             return (
-              <SwiperSlide key={id}>
+              <SwiperSlide key={movie.id}>
+                <Link to={`/movies/${movie.id}`}>
                   <img
-                    src={`${baseUrlImage}/w1280/${backdrop_path}`}
+                    src={`${baseUrlImage}/w1280/${movie.backdrop_path}`}
                     className="object-cover w-full h-full rounded mt-2"
                     alt="test"
                   />
-                
-                <div className="flex flex-col justify-center items-center mt-4  w-full h-full ">
-                    <h3>{title}</h3>
-                    <h3>{release_date}</h3>
-                </div>
+
+                  <div className="flex flex-col justify-center items-center mt-4  w-full h-full ">
+                    <h3>{movie.title}</h3>
+                    <h3>{movie.release_date}</h3>
+                  </div>
+                </Link>
               </SwiperSlide>
             );
           })}
