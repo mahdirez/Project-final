@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 
 export default function UpComingCard() {
+  const [bg, setBg] = useState("../../../images/home1.jpg");
   const [card, setCard] = useState([]);
   async function apiCard() {
     const { data } = await axios.get(
@@ -19,7 +20,7 @@ export default function UpComingCard() {
     apiCard();
   }, []);
   return (
-    <div className="bg-sky-500 h-fit">
+    <div className=" h-fit" style={{ backgroundImage: `url('${bg}')` }}>
       <div className="py-4 px-6">
         <h1 className="text-2xl my-2">Up Coming</h1>
         <Swiper
@@ -48,19 +49,23 @@ export default function UpComingCard() {
           className="mySwiper"
         >
           {card.map((movie) => {
+            function getImage (id) {
+              return `${baseUrlImage}/w1280/${movie.backdrop_path}`
+            }
             return (
               <SwiperSlide key={movie.id}>
                 <Link to={`/movies/${movie.id}`}>
-                  <img
-                    src={`${baseUrlImage}/w1280/${movie.backdrop_path}`}
-                    className="object-cover w-full h-full rounded mt-2"
-                    alt="test"
-                  />
+                <img
+                  onMouseOver={(e) => setBg(getImage(movie.id))}
+                  src={getImage(movie.id)}
+                  className="object-cover w-full h-full rounded mt-2"
+                  alt="test"
+                />
 
-                  <div className="flex flex-col justify-center items-center mt-4  w-full h-full ">
-                    <h3>{movie.title}</h3>
-                    <h3>{movie.release_date}</h3>
-                  </div>
+                <div className="flex flex-col justify-center items-center mt-4  w-full h-full ">
+                  <h3>{movie.title}</h3>
+                  <h3>{movie.release_date}</h3>
+                </div>
                 </Link>
               </SwiperSlide>
             );
