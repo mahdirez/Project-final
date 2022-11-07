@@ -12,6 +12,7 @@ export default function Movie() {
     const { data } = await axios.get(
       `${baseUrl}/movie/${id}?api_key=${apiKey}`
     );
+    console.log(data);
     setMovie(data);
   }
 

@@ -5,19 +5,19 @@ export default function MenuNav() {
   return (
     <ul className="hidden lg:flex gap-4 items-center">
       <li>
-        <NavLink to="/free">Home</NavLink>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <a href="/">Series</a>
+        <NavLink to="">Series</NavLink>
       </li>
       <li className="text-sky-400">
-        <a href="/">Categories</a>
+        <NavLink to="">Categories</NavLink>
       </li>
       <li>
-        <a href="/">About</a>
+        <NavLink to="/about">About</NavLink>
       </li>
       <li>
-        <a href="/">News</a>
+        <NavLink to="">News</NavLink>
       </li>
     </ul>
   );
