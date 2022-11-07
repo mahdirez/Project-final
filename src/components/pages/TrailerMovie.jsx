@@ -26,19 +26,20 @@ export default function TrailerMovie() {
     <div>
       {movie ? (
         <>
-          <div className="pt-52">{movie.title}</div>
+          <div className="pt-28 text-3xl text-center">{movie.title}</div>
           {movie.videos.results.map((item) => {
             return (
-              <iframe
-                width="420"
-                height="315"
+               <iframe
+               width="50%"
+               height="300px"
+               className="mx-auto mt-5 mb-5"
                 src={`https://www.youtube.com/embed/${item.key}`}
               ></iframe>
             );
           })}
         </>
       ) : (
-        <div>loading</div>
+        <div className="pt-52">loading</div>
       )}
     </div>
   );

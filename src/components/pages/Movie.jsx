@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { apiKey, baseUrl, baseUrlImage } from "../../api";
 
 export default function Movie() {
@@ -40,10 +40,12 @@ export default function Movie() {
               <i className="bi bi-heart-fill"></i>
               <i className="bi bi-caret-down-square-fill"></i>
               <i className="bi bi-star-fill"></i>
+              <Link to={`/videos/${movie.id}`}>
               <button>
                 <i className="bi bi-play-fill"></i>
                 Play Trailer
               </button>
+              </Link>
             </div>
             <div>
               <h1>overview</h1>
