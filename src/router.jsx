@@ -4,26 +4,34 @@ import ImgSlider from "./components/header/sliderHeader/ImgSlider";
 
 import Main from "./components/main/Main";
 import About from "./components/pages/About";
+import Login from "./components/pages/Login";
 import Movie from "./components/pages/Movie";
 import TrailerMovie from "./components/pages/TrailerMovie";
 
-
 export const router = createBrowserRouter([
-    {
-        element:<App/>,
-        children:[{
-            path:'/',
-            element:[<ImgSlider/>,<Main/>]
-        },{
-            path:"/movies/:id",
-            element:<Movie/>
-        },{
-            path:"/videos/:id",
-            element:<TrailerMovie/>
-        },
-    {
-        path:"/about/",
-        element:<About/>
-    }]
-    }
-])
+  {
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: [<ImgSlider />, <Main />],
+      },
+      {
+        path: "/movies/:id",
+        element: <Movie />,
+      },
+      {
+        path: "/videos/:id",
+        element: <TrailerMovie />,
+      },
+      {
+        path: "/about/",
+        element: <About />,
+      },
+      {
+        path:"/login/",
+        element:<Login/>
+      },
+    ],
+  },
+]);
