@@ -5,7 +5,7 @@ import { baseUrlImage } from "../../../api";
 export default function MovieCard({movie}) {
   return (
     <Link to={`/movies/${movie.id}`}>
-      <div  className=" bg-gray-300 aspect-[1/2] relative rounded overflow-hidden ">
+      <div  className=" bg-gray-300 relative rounded overflow-hidden ">
         <img
           src={`${baseUrlImage}/w1280/${movie.poster_path}`}
           className="object-cover w-full h-full"
