@@ -14,8 +14,8 @@ export default function Nav() {
       path: "/",
     },
     {
-      name: "Categories",
-      path: "/categories",
+      name: "Series",
+      path:"/series"
     },
     {
       name: "About",
@@ -47,7 +47,7 @@ export default function Nav() {
         {itemNav.map((item) => {
           return (
             <li>
-              <Link to={item.path}>{item.name}</Link>
+              <Link to={item.path} onClick={()=>openMenu(!menu)}>{item.name}</Link>
             </li>
           );
         })}

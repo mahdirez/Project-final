@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <section className=" bg-slate-800">
+    <section className=" bg-slate-800 flex flex-col items-center lg:block">
       <div className="grid lg:grid-cols-4 md:grid-cols-2">
         <div className="mb-6">
           <h5 className="uppercase font-bold mb-2.5 ml-12 mt-8">The Basics</h5>

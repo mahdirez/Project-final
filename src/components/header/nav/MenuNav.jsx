@@ -8,10 +8,6 @@ export default function MenuNav() {
       path: "/",
     },
     {
-      name: "Categories",
-      path: "/categories",
-    },
-    {
      name:"Series",
      path:"/series"
     },
