@@ -2,23 +2,33 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function MenuNav() {
+  const items = [
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name: "Categories",
+      path: "/categories",
+    },
+    {
+      name: "About",
+      path: "/about",
+    },
+  ];
+
+  function activeNav({isActive}){
+    return isActive ? "text-sky-500" : "text-white"
+  }
   return (
     <ul className="hidden lg:flex gap-4 items-center">
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="">Series</NavLink>
-      </li>
-      <li className="text-sky-400">
-        <NavLink to="">Categories</NavLink>
-      </li>
-      <li>
-        <NavLink to="/about">About</NavLink>
-      </li>
-      <li>
-        <NavLink to="">News</NavLink>
-      </li>
+      {items.map((item) => {
+        return (
+          <li>
+            <NavLink to={item.path} className={activeNav}>{item.name}</NavLink>
+          </li>
+        );
+      })}
     </ul>
   );
 }
