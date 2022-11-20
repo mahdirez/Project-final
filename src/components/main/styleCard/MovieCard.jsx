@@ -12,7 +12,7 @@ export default function MovieCard({movie}) {
           alt="test"
         />
 
-        <div className="opacity-0 flex flex-col justify-end p-8 absolute bottom-0 left-0 w-full h-full hover:opacity-100 bg-gradient-to-b from-[#0f172a12] to-[#0f172a81] hover:from-[#0f172a2a] hover:to-[#0f172a9c]">
+        <div className="opacity-0 flex flex-col justify-end p-8 absolute bottom-0 left-0 w-full h-full lg:hover:opacity-100 bg-gradient-to-b from-[#0f172a12] to-[#0f172a81] hover:from-[#0f172a2a] hover:to-[#0f172a9c]">
           <h3>{movie.title}</h3>
 
           <div className="flex gap-2 mt-2">

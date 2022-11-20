@@ -11,7 +11,9 @@ import "swiper/css/navigation";
 export default function FreeToWatch() {
   const [card, setCard] = useState([]);
   async function freeToWatch() {
-    const { data } = await axios.get(`${baseUrl}/movie/popular?api_key=${apiKey}`);
+    const { data } = await axios.get(
+      `${baseUrl}/movie/popular?api_key=${apiKey}`
+    );
     setCard(data.results);
   }
   useEffect(() => {
@@ -31,11 +33,11 @@ export default function FreeToWatch() {
         }}
         breakpoints={{
           "@0.00": {
-            slidesPerView: 1,
-            spaceBetween: 10,
+            slidesPerView: 3,
+            spaceBetween: 10
           },
           "@0.75": {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 20,
           },
           "@1.00": {
@@ -53,9 +55,7 @@ export default function FreeToWatch() {
         {card.map((movie) => {
           return (
             <SwiperSlide key={movie.id}>
-              <MovieCard
-                movie={movie}
-              />
+              <MovieCard movie={movie} />
             </SwiperSlide>
           );
         })}

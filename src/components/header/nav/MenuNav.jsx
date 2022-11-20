@@ -12,6 +12,10 @@ export default function MenuNav() {
       path: "/categories",
     },
     {
+     name:"Series",
+     path:"/series"
+    },
+    {
       name: "About",
       path: "/about",
     },

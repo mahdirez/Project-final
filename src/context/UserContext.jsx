@@ -4,10 +4,12 @@ import { createContext } from "react";
 import { apiKey, baseUrl } from "../api";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
+import {useNavigate} from "react-router-dom"
 
 export const UserContext = createContext();
 
 export default function UserProvider({ children }) {
+  const navigate = useNavigate();
   const [user, setUser] = useState({});
   const [session, setSession] = useState(initSession);
   function initSession() {
@@ -54,6 +56,7 @@ export default function UserProvider({ children }) {
       );
       setSession(session.data.session_id);
       localStorage.setItem("session", session.data.session_id);
+      navigate("/",{replace:true})
     } catch {
       toast.error("invalid");
     }

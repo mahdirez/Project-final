@@ -8,11 +8,7 @@ import { router } from "./router";
 import UserProvider from "./context/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <UserProvider>
-    <RouterProvider router={router} />
-  </UserProvider>
-);
+root.render(<RouterProvider router={router} />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

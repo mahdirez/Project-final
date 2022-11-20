@@ -43,7 +43,7 @@ export default function ImgSlider() {
             <SwiperSlide key={movie.id} className="imgSliders">
               <img src={`${baseUrlImage}/w1280/${movie.backdrop_path}`} />
               <div className="md:gap-8 w-2/4 leading-7 z-50 absolute  top-40 left-8 text-sky-400 ">
-                <h1 className="hidden lg:text-3xl uppercase font-bold">{movie.title}</h1>
+                <h1 className="hidden lg:block text-3xl uppercase font-bold">{movie.title}</h1>
                 <p className="hidden md:block mt-8 text-xl">{movie.overview}</p>
                 <div className="hidden md:flex gap-1 items-center">
                   <i className="bi bi-star-fill text-yellow-500"></i>/

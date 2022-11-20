@@ -30,11 +30,11 @@ export default function UpComingCard() {
           loop={true}
           breakpoints={{
             "@0.00": {
-              slidesPerView: 1,
+              slidesPerView: 2,
               spaceBetween: 10,
             },
             "@0.75": {
-              slidesPerView: 2,
+              slidesPerView: 3,
               spaceBetween: 20,
             },
             "@1.00": {
