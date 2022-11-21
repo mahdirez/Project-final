@@ -26,7 +26,7 @@ export default function Movie() {
             <img
               src={`${baseUrlImage}/w1280/${movie.poster_path}`}
               className="object-cover w-72 h-68 "
-              alt="test"
+              alt=""
             />
           </div>
           <div className="flex flex-col gap-5">
@@ -40,10 +40,10 @@ export default function Movie() {
               <i className="bi bi-caret-down-square-fill"></i>
               <i className="bi bi-star-fill"></i>
               <Link to={`/videos/${movie.id}`}>
-              <button>
-                <i className="bi bi-play-fill"></i>
-                Play Trailer
-              </button>
+                <button>
+                  <i className="bi bi-play-fill"></i>
+                  Play Trailer
+                </button>
               </Link>
             </div>
             <div>

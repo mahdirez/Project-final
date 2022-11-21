@@ -26,14 +26,12 @@ export default function People() {
             <img
               src={`${baseUrlImage}/w1280/${movie.profile_path}`}
               className="object-cover w-72 h-68 "
-              alt="test"
+              alt=""
             />
           </div>
           <div className="flex flex-col gap-5">
             <div className="text-3xl font-bold">{movie.name}</div>
-            <div className="text-lg">
-            birthday :  {movie.birthday} 
-            </div>
+            <div className="text-lg">birthday : {movie.birthday}</div>
             <div className="flex gap-8 md:gap-12">
               <i className="bi bi-list-nested "></i>
               <i className="bi bi-heart-fill"></i>
